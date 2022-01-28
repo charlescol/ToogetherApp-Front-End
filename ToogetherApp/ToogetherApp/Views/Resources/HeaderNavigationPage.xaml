@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToogetherApp.Views.Resources.HeaderNavigationPage"
+             xmlns:ressources="clr-namespace:ToogetherApp.Views.Resources"
+             x:Name="this">
+    <ContentView.Content>
+        <Grid Margin="0,5,0,10" Grid.Row="0" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45"/>
+            </Grid.RowDefinitions>
+            <ressources:CustomRoundTitle Grid.Row="0" Grid.Column="1" x:Name="title_view" HorizontalOptions="CenterAndExpand"  Text="{Binding Text , Source={x:Reference this}}" Margin="0,5,0,0" IsVisible="{Binding TitleVisible , Source={x:Reference this}}"/>
+            <Frame Grid.Row="0" Grid.Column="2" BackgroundColor="Transparent" Padding="10" HorizontalOptions="End" HeightRequest="20" VerticalOptions="Fill" WidthRequest="20" CornerRadius="50" BorderColor="Black" Margin="0,0,4,0">
+                <ImageButton Source="back_icon.png"  BackgroundColor="Transparent" Clicked="OnQuitPage"/>
+            </Frame>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

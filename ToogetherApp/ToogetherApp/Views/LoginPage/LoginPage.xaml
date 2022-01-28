@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="White"
+             x:Class="ToogetherApp.Views.LoginPage"
+             xmlns:views="clr-namespace:ToogetherApp.Views"
+             xmlns:ressources="clr-namespace:ToogetherApp.Views.Resources">
+    <ContentPage.Content>
+        <Grid VerticalOptions="FillAndExpand"  Margin="20,0,20,0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0" Spacing="20" VerticalOptions="End">
+                <Image Source="toog_logo.png"   HeightRequest="230"/>
+                <Image Source="name_logo.png" HorizontalOptions="CenterAndExpand" Margin="20,0,20,0" />
+            </StackLayout>
+
+            <StackLayout Grid.Row="1" Spacing="0" VerticalOptions="Start">
+                <ressources:FormularField Source="mail_icon.png" Text="Mail" HorizontalOptions="FillAndExpand" HeightRequest="30" Margin="20,20,20,0"/>
+                <ressources:FormularField Source="participant_icon.png" Text="Password" HorizontalOptions="FillAndExpand" HeightRequest="30"  Margin="20,5,20,0"/>
+                <Label Text="Password Forgotten ?" TextColor="{StaticResource PrimaryOrangeColor}"  HorizontalOptions="End" Margin="20,0,20,0"/>
+
+                <views:FacebookLoginButton VerticalOptions='Center' Margin="0,10,0,0"/>
+            </StackLayout>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

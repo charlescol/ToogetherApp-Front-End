@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToogetherApp.Views.AddProfilePictureView"
+             xmlns:ressources="clr-namespace:ToogetherApp.Views.Resources"
+             x:Name="this">
+  <ContentView.Content>
+        <StackLayout Spacing="30" x:Name="main_layout">
+            <Label Text="Ajoute une photo de profile !" 
+                   TextColor="{StaticResource PrimaryOrangeColor}" 
+                   FontSize="Title" 
+                   HorizontalOptions="Center" 
+                   Margin="0,30,0,0"/>
+            <Label Margin="20,0,20,0" 
+                   HorizontalTextAlignment="Center" 
+                   TextColor="{StaticResource SubtitlesCreateUserPageColor}"  
+                   Text="Une description permettra de te décrire pour les autres utilisateurs qui visiteront ton profile.ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. " HorizontalOptions="Center"  />
+            <Grid Margin="20" VerticalOptions="FillAndExpand" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+
+                <Frame Grid.Row="0" Grid.ColumnSpan="2"  
+                       VerticalOptions="Start" 
+                       BackgroundColor="Transparent" 
+                       BorderColor="{StaticResource PrimaryOrangeColor}" Padding="1" 
+                       CornerRadius="100" 
+                       HeightRequest="200" 
+                       HorizontalOptions="Center" 
+                       WidthRequest="200"
+                       x:Name="selected_image_frame">
+                    <Image x:Name="selected_image"
+                            Aspect="Fill"
+                           HeightRequest="200"
+                           WidthRequest="200"
+                           Source="{Binding ProfileSource}">
+                        <Image.GestureRecognizers>
+                            <DragGestureRecognizer />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+                <ressources:BackgroundImageButton Grid.Row="2" Grid.Column="0" Text="Gallerie" x:Name="gallery_button"  HeightRequest="40" ImageSource="backgroundImageBand_color.jpg"  VerticalOptions="Start" Margin="30,20,10,0"/>
+                <ressources:BackgroundImageButton Grid.Row="2" Grid.Column="1" Text="Photo" x:Name="camera_button" HeightRequest="40"  ImageSource="backgroundImageBand_color.jpg" VerticalOptions="Start" Margin="10,20,30,0"/>
+            </Grid>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

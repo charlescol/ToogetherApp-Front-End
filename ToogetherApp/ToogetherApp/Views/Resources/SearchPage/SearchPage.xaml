@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToogetherApp.Views.Resources.SearchPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid Margin="10,7,10,7" HorizontalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <ImageButton Grid.Column="0" Source="back_icon.png" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="40" Padding="10" CornerRadius="60" BackgroundColor="DarkOrange" Clicked="exit" />
+                <Frame  Grid.Column="1"  Padding="1"  CornerRadius="35" OutlineColor="DarkOrange" HorizontalOptions="FillAndExpand" BackgroundColor="White" HasShadow="False"  x:Name="search_bar_frame">
+                    <SearchBar TextColor="Black"  CancelButtonColor="White" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent"/>
+                </Frame>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

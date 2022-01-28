@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToogetherApp.Views.Resources.CustomRoundTitle">
+    <ContentView.Content>
+        <Frame BackgroundColor="Black" CornerRadius="15" HeightRequest="30" HorizontalOptions="FillAndExpand" BorderColor="Black" Padding="30, 10,30, 10">
+            <Label Text="{Binding Text}" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

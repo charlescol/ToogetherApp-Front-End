@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToogetherApp.Views.ProfilePage"
+            BackgroundImageSource="backgroundImage_color.jpg"
+            x:Name="this">
+    <ContentPage.Content>
+        <StackLayout  Orientation="Vertical" VerticalOptions="FillAndExpand" >
+            <Grid>
+                <ImageButton Grid.Column="0" Source="hamburger_icon.png" HorizontalOptions="StartAndExpand" WidthRequest="35" BackgroundColor="Transparent" Clicked="OnOpenFlyout"/>
+                <StackLayout Grid.Column="1" HorizontalOptions="End" Orientation="Horizontal" Spacing="4" Margin="0,0,5,0">
+                    <Label  BackgroundColor="Transparent" Text="Edit" TextColor="White"  FontSize="Large"  VerticalOptions="Center">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnOpenUserParametersPage" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <ImageButton Source="edit_icon.png" WidthRequest="15" BackgroundColor="Transparent" Clicked="OnOpenUserParametersPage"/>
+                </StackLayout >
+            </Grid>
+
+            <Grid HeightRequest="130" BackgroundColor="Transparent" Margin="10,0,10,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" Spacing="0" VerticalOptions="Fill">
+                    <RelativeLayout HorizontalOptions="Center" BackgroundColor="Transparent" Margin="0" HeightRequest="105">
+
+                        <Frame x:Name="profile_picture" HeightRequest="105" BackgroundColor="White" VerticalOptions="Start" HorizontalOptions="Center" CornerRadius="100" Padding="2"  HasShadow="False" >
+                            <Frame CornerRadius="100"  HorizontalOptions="CenterAndExpand" Padding="0" IsClippedToBounds="True">
+                                <Image Source="test_photoProfile.jpeg" Aspect="AspectFill"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+                            </Frame>
+                        </Frame>
+                        <Image RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=profile_picture, Property=Width, Factor=0.7}"
+                               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, ElementName=profile_picture, Property=Height, Factor=0.7}"
+                            Source="certificate_icon.png" HeightRequest="35" />
+                    </RelativeLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Image Source="connected_symbol.png" HeightRequest="8" VerticalOptions="Center" />
+                        <Label   Text="En ligne" TextColor="White"  VerticalOptions="End"/>
+                    </StackLayout>
+
+                </StackLayout>
+
+                <Label Grid.Column="1"  Grid.Row="0" Text="Charles Colella" FontSize="Title" HorizontalOptions="Center" TextColor="Black" BackgroundColor="Transparent"/>
+                <Grid  Grid.Column="1" Grid.Row="1" BackgroundColor="Transparent" VerticalOptions="Fill" HorizontalOptions="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Grid.Row="0" Text="18" TextColor="White" FontSize="Large" BackgroundColor="Transparent" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label Grid.Column="0" Grid.Row="1" Text="Abonnés" TextColor="White"  BackgroundColor="Transparent" VerticalOptions="Start"/>
+                    <Line Grid.Column="1" Grid.Row="0" Grid.RowSpan="2"  X1="0" Y1="0" X2="0" Y2="30" Stroke="White" />
+                    <Label Grid.Column="2" Grid.Row="0" Text="4" TextColor="White" FontSize="Large"  BackgroundColor="Transparent" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label Grid.Column="2" Grid.Row="1" Text="Evenements" TextColor="White"  BackgroundColor="Transparent" VerticalOptions="Start" HorizontalOptions="Center"/>
+                </Grid>
+                <Label Grid.Column="1" Grid.Row="2" Text="10 Abonnements" TextColor="White" VerticalOptions="End" HorizontalOptions="End"/>
+            </Grid>
+            <ContentView BackgroundColor="White" VerticalOptions="FillAndExpand" Padding="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout  Grid.Column="0" Orientation="Horizontal">
+                        <Image  VerticalOptions="Start" Source="date_icon.png" HeightRequest="25" HorizontalOptions="Start"/>
+                        <Label  Text="02/02/2000" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    </StackLayout>
+                    <StackLayout  Grid.Column="1" Orientation="Horizontal" HorizontalOptions="End">
+                        <Image  VerticalOptions="Start" Source="pinLocation_icon.png" HeightRequest="25" HorizontalOptions="Start"/>
+                        <Label  Text="Lyon, Rhône-Alpes, France" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    </StackLayout>
+
+
+                    <Label Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Text="Description" FontSize="Large"/>
+                    <Label Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" TextColor="Black" LineBreakMode="WordWrap" Text="Praesent volutpat, magna in condimentum molestie, nunc turpis ultricies dolor, a pulvinar lorem neque vitae sem. Phasellus ultricies vulputate lorem quis mattis. Sed accumsan sapien nulla, sit amet commodo augue posuere non. Donec gravida pulvinar erat. Nam dictum hendrerit elit, sed dapibus lectus posuere in. Morbi ullamcorper, mi a molestie pulvinar, urna lorem euismod ante, sed condimentum enim elit sit amet augue. Vestibulum aliquam feugiat sapien. "/>
+                    <FlexLayout Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Margin="0,10,0,0" Direction="Row" AlignItems="Center" JustifyContent="Start" VerticalOptions="FillAndExpand" >
+                        <Frame BackgroundColor="Transparent" Margin="0,0,0,10" CornerRadius="15" HeightRequest="20" FlexLayout.AlignSelf="Start" Padding="6,4,4,6" BorderColor="Black">
+                            <Label Text="monTag1" TextColor="Black"/>
+                        </Frame>
+                        <Frame BackgroundColor="Transparent" Margin="10,0,0,10" CornerRadius="15" HeightRequest="20" FlexLayout.AlignSelf="Start" Padding="6,4,4,6" BorderColor="Black">
+                            <Label Text="monTag2" TextColor="Black"/>
+                        </Frame>
+                        <Frame BackgroundColor="Transparent" Margin="10,0,0,10" CornerRadius="15" HeightRequest="20" FlexLayout.AlignSelf="Start" Padding="6,4,4,6" BorderColor="Black">
+                            <Label Text="monTag3" TextColor="Black"/>
+                        </Frame>
+                        <Frame BackgroundColor="Transparent" Margin="10,0,0,10" CornerRadius="15" HeightRequest="20" FlexLayout.AlignSelf="Start" Padding="6,4,4,6" BorderColor="Black">
+                            <Label Text="monTag4" TextColor="Black"/>
+                        </Frame>
+
+                    </FlexLayout>
+                </Grid>
+
+
+            </ContentView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

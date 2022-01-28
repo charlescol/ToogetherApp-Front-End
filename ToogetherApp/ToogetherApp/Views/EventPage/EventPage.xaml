@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToogetherApp.Views.EventPage"
+             BackgroundImageSource="backgroundImage_color.jpg"
+             xmlns:view="clr-namespace:ToogetherApp.Views" >
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid HorizontalOptions="Fill" BackgroundColor="Transparent" Padding="0,10,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Frame Grid.Column="0" Grid.Row="0" BackgroundColor="White" Padding="7"  HeightRequest="20" HorizontalOptions="Center" CornerRadius="50" BorderColor="Black" >
+                    <ImageButton Source="date_icon.png"  BackgroundColor="Transparent" Clicked="OpenCreationPage"/>
+                </Frame>
+                <Frame Grid.Column="1" Grid.Row="0" BackgroundColor="White" Padding="7"  HeightRequest="20" HorizontalOptions="Center" CornerRadius="50" BorderColor="Black" >
+                    <ImageButton Source="date_icon.png"  BackgroundColor="Transparent"  Clicked="OpenParticipatedPage"/>
+                </Frame>
+                <Frame Grid.Column="2" Grid.Row="0" Padding="7" HeightRequest="20"  HorizontalOptions="Center" BackgroundColor="White" CornerRadius="35" BorderColor="Black">
+                    <ImageButton Source="event_favoris_icon.png" BackgroundColor="Transparent" Clicked="OpenLikedPage"/>
+                </Frame>
+                <Frame Grid.Column="3" Grid.Row="0" Padding="7" HeightRequest="20" HorizontalOptions="Center"  BackgroundColor="White" CornerRadius="35" BorderColor="Black">
+                    <ImageButton Source="event_created_icon.png" BackgroundColor="Transparent" Clicked="OpenCreatedPage"/>
+                </Frame>
+                <Frame Grid.Column="4" Grid.Row="0" Padding="7" HeightRequest="20" HorizontalOptions="Center"  BackgroundColor="White" CornerRadius="35" BorderColor="Black">
+                    <ImageButton Source="event_historical_icon.png" BackgroundColor="Transparent" Clicked="OpenHistoricalPage"/>
+                </Frame>
+                <Label Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" Text="Nouveau" TextColor="White"/>
+                <Label Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" Text="A Venir" TextColor="White"/>
+                <Label Grid.Row="1" Grid.Column="2" HorizontalOptions="Center" Text="Favoris" TextColor="White"/>
+                <Label Grid.Row="1" Grid.Column="3" HorizontalOptions="Center" Text="Créés" TextColor="White"/>
+                <Label Grid.Row="1" Grid.Column="4" HorizontalOptions="Center" Text="Historique" TextColor="White"/>
+            </Grid>
+            <view:NewsFeed />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

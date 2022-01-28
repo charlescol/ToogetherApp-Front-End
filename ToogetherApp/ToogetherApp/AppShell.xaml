@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:ToogetherApp.Views"
+       Title="ToogetherApp"
+       x:Class="ToogetherApp.AppShell">
+
+    <!--
+        The overall app visual hierarchy is defined here, along with navigation.
+    
+        https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/
+    -->
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.NavBarIsVisible" Value="False"/>
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="Shell.ForegroundColor" Value="White" />
+                <Setter Property="Shell.TitleColor" Value="White" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="White" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="White"/>
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}"/>
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <MenuItem Text="Deconnexion"
+              IconImageSource="disconect_icon.png" />
+    <MenuItem Text="Parametres"
+              IconImageSource="parameter_icon.png" />
+    <MenuItem Text="Conditions d'Utilisation"
+              IconImageSource="terms_icon.png" />
+    <MenuItem Text="Aide"
+              IconImageSource="help_icon.png" />
+
+
+    <Tab Icon="profilePage_icon.png">
+        <ShellContent Route="ProfilePage" ContentTemplate="{DataTemplate local:ProfilePage}" />
+    </Tab>
+    <Tab Icon="mapPage_icon.png" x:Name="first_tab">
+        <ShellContent Route="MapPage" ContentTemplate="{DataTemplate local:MapPage}" />
+    </Tab>
+    <Tab Icon="creationPage_icon.png">
+        <ShellContent Route="CreationPage" ContentTemplate="{DataTemplate local:EventPage}" />
+    </Tab>
+    <Tab Icon="chatPage_icon.png">
+        <ShellContent Route="ChatPage" ContentTemplate="{DataTemplate local:ChatPage}" />
+    </Tab>
+</Shell>
+   

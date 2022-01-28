@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToogetherApp.Views.Resources.Event.EventNewsfeed"
+             HorizontalOptions="FillAndExpand"
+             HeightRequest="320" >
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <RelativeLayout Grid.Row="0">
+            <Frame  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                HorizontalOptions="FillAndExpand"  CornerRadius="20" Padding="-1" Margin="5" HeightRequest="200">
+                <Image Source="test_event_image.png"  Aspect="AspectFill" />
+            </Frame>
+            <Grid RelativeLayout.XConstraint="0" RelativeLayout.YConstraint="170" 
+                         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.97}"
+                  HorizontalOptions="End">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <ImageButton Grid.Column="0" WidthRequest="30" HeightRequest="30" BackgroundColor="Transparent" Source="like_icon.png" HorizontalOptions="EndAndExpand" />
+                <Label Grid.Column="1" TextColor="White" Text="18K" HorizontalOptions="End" VerticalOptions="Center"/>
+            </Grid>
+            <Grid RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.03}" RelativeLayout.YConstraint="170" 
+                         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.97}"
+                  HorizontalOptions="Start">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <ImageButton Grid.Column="0" WidthRequest="30" HeightRequest="30" BackgroundColor="Transparent" Source="addLocation_yellow.png" HorizontalOptions="EndAndExpand" />
+                <Label Grid.Column="1" TextColor="White" Text="Lyon 2e - Hotel Dieu" HorizontalOptions="End" VerticalOptions="End"/>
+            </Grid>
+            <ImageButton RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.88}" RelativeLayout.YConstraint="5" 
+                    WidthRequest="30" Source="parameter_icon.png" HorizontalOptions="End" BackgroundColor="Transparent"/>
+        </RelativeLayout>
+        <Grid  Grid.Row="1" Margin="8,0,8,0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label  Grid.Row="0" Text="21/01/2022 A 23H00 - 22/01/2022 A 05H00" HorizontalOptions="StartAndExpand"  FontSize="Subtitle" TextColor="DarkSlateGray" FontAttributes="Bold"/>
+            <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalOptions="End" Spacing="-1">
+                <Label   Text="43K" HorizontalOptions="End" VerticalOptions="End" TextColor="Black"/>
+                <Frame Margin="8,3,2,0" Padding="4" CornerRadius="30"  HorizontalOptions="End"  IsClippedToBounds="True" BorderColor="Black" VerticalOptions="Start" HasShadow="False">
+                    <Image Source="participant_icon.png" Aspect="AspectFit" WidthRequest="10"  />
+                </Frame>
+            </StackLayout>
+            <Label  Grid.Row="1" Text="Chris leibing Electro" HorizontalOptions="StartAndExpand" VerticalOptions="Start" FontSize="Title" TextColor="Black" FontAttributes="Bold"/>
+            <FlexLayout Grid.Row="2" Direction="Row" AlignItems="Center" JustifyContent="Start" VerticalOptions="Start">
+                <Frame BackgroundColor="Transparent" Margin="0,0,0,10" CornerRadius="15" HeightRequest="20" FlexLayout.AlignSelf="Start" Padding="6,4,4,6" BorderColor="Black">
+                    <Label Text="monTag1" TextColor="Black"/>
+                </Frame>
+                <Frame BackgroundColor="Transparent" Margin="10,0,0,10" CornerRadius="15" HeightRequest="20" FlexLayout.AlignSelf="Start" Padding="6,4,4,6" BorderColor="Black">
+                    <Label Text="monTag2" TextColor="Black"/>
+                </Frame>
+                <Frame BackgroundColor="Transparent" Margin="10,0,0,10" CornerRadius="15" HeightRequest="20" FlexLayout.AlignSelf="Start" Padding="6,4,4,6" BorderColor="Black">
+                    <Label Text="monTag2" TextColor="Black"/>
+                </Frame>
+            </FlexLayout>
+
+        </Grid>
+    </Grid>
+
+</ContentView>

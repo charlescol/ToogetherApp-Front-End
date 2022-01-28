@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToogetherApp.Views.Resources.Removable_tags"
+             x:Name="this">
+  <ContentView.Content>
+        <Frame BackgroundColor="Transparent" CornerRadius="15" HeightRequest="20" FlexLayout.AlignSelf="Start" Padding="6,4,4,6" BorderColor="Black">
+            <StackLayout Orientation="Horizontal" Spacing="0">
+                <Label Text="{Binding Text  , Source={x:Reference this}}" TextColor="Black"/>
+                <ImageButton Source="back_icon.png" Clicked="OnTagRemoved" BackgroundColor="Transparent" Margin="3"/>
+            </StackLayout>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

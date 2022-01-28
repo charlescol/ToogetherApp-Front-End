@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:maps="clr-namespace:ToogetherApp.Views" 
+    x:Class="ToogetherApp.Views.MapPage" 
+    BackgroundImageSource="backgroundImage_color.jpg">
+    <ContentPage.Content>
+        <AbsoluteLayout x:Name="main_layout">
+            <maps:Map  x:Name="CurentMap" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+            <Grid Margin="20,20,20,7" AbsoluteLayout.LayoutBounds="0,0,1,0.17" HorizontalOptions="FillAndExpand" AbsoluteLayout.LayoutFlags="SizeProportional" ColumnSpacing="0" >
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <!--<ImageButton Grid.Column="0" Source="notification_icon.png"  CornerRadius="35" Clicked="show_pop_up" Padding="7" WidthRequest="50" HorizontalOptions="FillAndExpand"  BackgroundColor="#FF8E00" VerticalOptions="CenterAndExpand"/>-->
+                <Frame  Grid.Column="0" Grid.ColumnSpan="5"  Padding="1"  CornerRadius="35" OutlineColor="DarkOrange" HorizontalOptions="FillAndExpand" BackgroundColor="White" HasShadow="False"  x:Name="search_bar_frame">
+                    <SearchBar TextColor="Black"  CancelButtonColor="White" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent"/>
+                </Frame>
+                <!--<ImageButton Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="1" Source="update_icon.png" Clicked="show_searchPage" CornerRadius="35"  WidthRequest="50" HorizontalOptions="FillAndExpand" BackgroundColor="OrangeRed" VerticalOptions="CenterAndExpand" Padding="10"/>-->
+                <ImageButton Grid.Column="4" Grid.ColumnSpan="1" Margin="20,6,8,6" Source="notification_icon.png"  Clicked="show_pop_up" CornerRadius="35"  WidthRequest="50" HorizontalOptions="StartAndExpand" BackgroundColor="DarkOrange"  VerticalOptions="CenterAndExpand" Padding="7" />
+                <ImageButton Grid.Column="3" Grid.ColumnSpan="1" Margin="38,6,-10,6" Source="micro_icon.png"  Clicked="showSearchBarAsync" CornerRadius="35"  WidthRequest="50" HorizontalOptions="EndAndExpand" BackgroundColor="Transparent"  VerticalOptions="CenterAndExpand" Padding="7" />
+
+                <!--<ImageButton Grid.Column="0" Grid.Row="0" CornerRadius="35" Source="maps_center_icon.png"  WidthRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="OrangeRed" VerticalOptions="StartAndExpand" Padding="7" />-->
+            </Grid>
+
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

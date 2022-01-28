@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToogetherApp.Views.CreateProfileContentPage"
+             x:Name="this">
+  <ContentPage.Content>
+      <StackLayout Margin="20">
+            <CarouselView x:Name="collection_view" 
+                          ItemsSource="{Binding Views, Source={x:Reference this}}" 
+                          HorizontalOptions="FillAndExpand"
+                          IndicatorView="indicatorView">
+                <CarouselView.ItemTemplate >
+                    <DataTemplate>
+                        <ContentView Content="{Binding .} " 
+                                     HorizontalOptions="FillAndExpand" 
+                                     BackgroundColor="Transparent" />
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+                <CarouselView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Horizontal"
+                           SnapPointsType="MandatorySingle"
+                           SnapPointsAlignment="Center" />
+                </CarouselView.ItemsLayout>
+            </CarouselView>
+            <IndicatorView x:Name="indicatorView"
+                   IndicatorColor="{StaticResource BackgroundSelectorColor}"
+                   SelectedIndicatorColor="{StaticResource SelectorColor}"
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Center"/>
+        </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

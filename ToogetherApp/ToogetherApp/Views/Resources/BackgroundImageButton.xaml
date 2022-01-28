@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AbsoluteLayout xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToogetherApp.Views.Resources.BackgroundImageButton"
+             x:Name="this">
+    <ImageButton 
+                        AbsoluteLayout.LayoutFlags="SizeProportional" 
+                        CornerRadius="30" 
+                        AbsoluteLayout.LayoutBounds="0,0,1,1" 
+                        Source="{Binding ImageSource, Source={x:Reference this}}"
+                        Clicked="OnClicked"
+                        Aspect="Fill" 
+                        HorizontalOptions="FillAndExpand" 
+                        VerticalOptions="FillAndExpand"/>
+    <Label AbsoluteLayout.LayoutFlags="PositionProportional" 
+                           AbsoluteLayout.LayoutBounds="0.5,0.5" 
+                           Text="{Binding Text, Source={x:Reference this}}" 
+                           TextColor="White" />
+    <AbsoluteLayout.GestureRecognizers>
+        <TapGestureRecognizer Tapped="OnClicked"/>
+    </AbsoluteLayout.GestureRecognizers>
+</AbsoluteLayout>

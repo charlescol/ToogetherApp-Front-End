@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="ToogetherApp.Views.AddTagView"
+	xmlns:ressources="clr-namespace:ToogetherApp.Views.Resources"
+	xmlns:vm="clr-namespace:BusinessLogicLayer.ViewModels.Pages.Profile;assembly=BusinessLogicLayer">
+    <ContentView.Content>
+        <StackLayout Spacing="30" VerticalOptions="FillAndExpand">
+            <Label Text="Ajoute des tags à ton profile !" 
+                   TextColor="{StaticResource PrimaryOrangeColor}" 
+                   FontSize="Title" 
+                   HorizontalOptions="Center" 
+                   Margin="0,30,0,0"/>
+            <Label Margin="20,0,20,0" 
+                   HorizontalTextAlignment="Center" 
+                   TextColor="{StaticResource SubtitlesCreateUserPageColor}"  
+                   Text="Une description permettra de te décrire pour les autres utilisateurs qui visiteront ton profile.ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. " HorizontalOptions="Center"  />
+            <Grid VerticalOptions="Fill" Margin="20,0,20,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Frame Grid.Row="0" 
+                       BorderColor="{StaticResource PrimaryOrangeColor}" 
+                       CornerRadius="20" 
+                       Padding="1" 
+                       BackgroundColor="Transparent" >
+                    <Entry TextColor="Black" 
+                           Completed="OnEntryCompleted"/>
+                </Frame>
+                <ScrollView Orientation="Vertical"
+                            VerticalOptions="FillAndExpand"
+                            Grid.Row="1">
+                    <FlexLayout BindableLayout.ItemsSource="{Binding Tags}" 
+                                Direction="Row" 
+                                AlignItems="Center" 
+                                JustifyContent="Start"  
+                                VerticalOptions="Fill"
+                                Margin="0,20,0,0" 
+                                Wrap="Wrap">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <ressources:Removable_tags Text="{Binding .}" 
+                                                           Margin="3" 
+                                                           RemovedCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:ProfileViewModel}}, Path=RemoveTagCommand}"/>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </FlexLayout>
+                </ScrollView>
+            </Grid>
+            <AbsoluteLayout HeightRequest="40" 
+                            VerticalOptions="EndAndExpand" 
+                            Margin="50,20,50,20">
+                <ImageButton AbsoluteLayout.LayoutFlags="SizeProportional" 
+                             CornerRadius="30" 
+                             AbsoluteLayout.LayoutBounds="0,0,1,1" 
+                             Source="backgroundImageBand_color.jpg" Aspect="Fill" 
+                             HorizontalOptions="FillAndExpand" 
+                             VerticalOptions="FillAndExpand"/>
+                <Label AbsoluteLayout.LayoutFlags="PositionProportional" 
+                       AbsoluteLayout.LayoutBounds="0.5,0.5" 
+                       Text="Terminer" 
+                       TextColor="White" />
+                <AbsoluteLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnProfileCompleted"/>
+                </AbsoluteLayout.GestureRecognizers>
+            </AbsoluteLayout>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

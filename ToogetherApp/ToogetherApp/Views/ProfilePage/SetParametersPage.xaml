@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToogetherApp.Views.SetParametersPage"
+             xmlns:ressources="clr-namespace:ToogetherApp.Views.Resources"
+             BackgroundImageSource="backgroundImage_color.jpg">
+    <ContentPage.Content>
+        <StackLayout>
+            <ressources:HeaderNavigationPage Text="Edition" TitleVisible="False"/>
+            <ScrollView VerticalOptions="FillAndExpand">
+                <ContentView BackgroundColor="White" >
+                    <StackLayout Orientation="Vertical" Margin="30,10,30,0">
+                        <RelativeLayout BackgroundColor="Transparent" HeightRequest="40" Margin="0,0,0,20">
+                            <ressources:CustomRoundTitle RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                                                                          x:Name="title_view" HorizontalOptions="FillAndExpand" HeightRequest="40"  Text="Informations Publiques"  />
+                            <Frame RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Constant=-30}"
+                            RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=8}" BackgroundColor="Transparent"
+                       BorderColor="White" CornerRadius="50" Padding="5">
+                                <ImageButton Source="unfold_section_icon.png" WidthRequest="15"/>
+                            </Frame>
+                            <Image Source="public_icon.png" WidthRequest="20" 
+                                   RelativeLayout.XConstraint="{ConstraintExpression Type=Constant, Constant=10}"
+                            RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=10}"/>
+
+                        </RelativeLayout>
+                        <!--Title-->
+                        <!--Name-->
+                        <ressources:FormularField Source="participant_icon.png" Text="Nom" HorizontalOptions="FillAndExpand" HeightRequest="30"/>
+                        <!--First Name-->
+                        <ressources:FormularField Source="participant_icon.png" Text="Prénom" HorizontalOptions="FillAndExpand" HeightRequest="30"/>
+                        <!--Ville-->
+                        <ressources:FormularField Source="location_icon.png"  Text="Ville" HorizontalOptions="FillAndExpand" HeightRequest="30"/>
+                        <!--Pays-->
+                        <ressources:FormularField Source="pinLocation_icon.png"  Text="Pays" HorizontalOptions="FillAndExpand" HeightRequest="30"/>
+                        <!--Date Naissance-->
+                        <ressources:FormularField Source="date_icon.png"  Text="Age" HorizontalOptions="FillAndExpand" HeightRequest="30"/>
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <StackLayout Grid.Column="0" Orientation="Horizontal" BackgroundColor="Transparent" >
+                                <Image Source="sex_icon.png" HeightRequest="15"/>
+                                <Label  Text="Sexe" VerticalOptions="Center" FontSize="Body" HorizontalOptions="Center" TextColor="Black"/>
+                            </StackLayout>
+                            <Frame Grid.Column="1"  BorderColor="Black" Padding="5" CornerRadius="8" HasShadow="False" Margin="5,0,0,0">
+                                <Label Text="Homme" HorizontalOptions="Center"/>
+                            </Frame>
+                            <Frame Grid.Column="2"  BorderColor="Black" Padding="5" CornerRadius="8" HasShadow="False">
+                                <Label Text="Femme" HorizontalOptions="Center"/>
+                            </Frame>
+                            <Frame Grid.Column="3"  BorderColor="Black" Padding="5" CornerRadius="8" HasShadow="False">
+                                <Label Text="Autre" HorizontalOptions="Center"/>
+                            </Frame>
+                            <StackLayout Grid.Column="0" Grid.Row="1" Orientation="Horizontal" BackgroundColor="Transparent" >
+                                <Image Source="addDescription_icon.png" HeightRequest="15"/>
+                                <Label  Text="Texte" VerticalOptions="Center" FontSize="Body" HorizontalOptions="Center" TextColor="Black"/>
+                            </StackLayout>
+                            <Frame Grid.Column="1"  Grid.Row="1" Grid.RowSpan="5" Grid.ColumnSpan="3" Margin="5,0,0,0" BorderColor="Black" Padding="5" CornerRadius="10" HasShadow="False">
+                                <Editor Text=""  />
+                            </Frame>
+                        </Grid>
+                        <!--Title-->
+                        <RelativeLayout BackgroundColor="Transparent" HeightRequest="40" Margin="0,20,0,20">
+                            <ressources:CustomRoundTitle RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                                                                          HorizontalOptions="FillAndExpand" HeightRequest="40"  Text="Informations Privées"  />
+                            <Frame RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Constant=-30}"
+                       RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=8}" BackgroundColor="Transparent"
+                       BorderColor="White" CornerRadius="50" Padding="5">
+                                <ImageButton Source="unfold_section_icon.png" WidthRequest="15"/>
+                            </Frame>
+                            <Image Source="private_icon.png" WidthRequest="20" 
+                                   RelativeLayout.XConstraint="{ConstraintExpression Type=Constant, Constant=10}"
+                            RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=10}"/>
+                        </RelativeLayout>
+                        <!--Name-->
+                        <ressources:FormularField Source="mail_icon.png" Text="E-mail" HorizontalOptions="FillAndExpand" HeightRequest="30"/>
+                        <!--Name-->
+                        <ressources:FormularField Source="tel_icon.png" Text="Tél" HorizontalOptions="FillAndExpand" HeightRequest="30"/>
+                        <!--Title-->
+                        <RelativeLayout BackgroundColor="Transparent" HeightRequest="40" Margin="0,20,0,20">
+                            <ressources:CustomRoundTitle RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                                                                          HorizontalOptions="FillAndExpand" HeightRequest="40"  Text="Tags"  />
+                            <Frame RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Constant=-30}"
+                       RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=8}" BackgroundColor="Transparent"
+                       BorderColor="White" CornerRadius="50" Padding="5">
+                                <ImageButton Source="unfold_section_icon.png" WidthRequest="15"/>
+                            </Frame>
+                            <Image Source="tag_icon.png" WidthRequest="20" 
+                                   RelativeLayout.XConstraint="{ConstraintExpression Type=Constant, Constant=10}"
+                            RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=10}"/>
+                        </RelativeLayout>
+                        <FlexLayout Grid.Row="2" Direction="Row" AlignItems="Center" JustifyContent="Start" VerticalOptions="Start">
+                            <Frame BackgroundColor="Transparent" Margin="0,0,0,10" CornerRadius="15" HeightRequest="20" FlexLayout.AlignSelf="Start" Padding="6,4,4,6" BorderColor="Black">
+                                <Label Text="monTag1" TextColor="Black"/>
+                            </Frame>
+                            <Frame BackgroundColor="Transparent" Margin="10,0,0,10" CornerRadius="15" HeightRequest="20" FlexLayout.AlignSelf="Start" Padding="6,4,4,6" BorderColor="Black">
+                                <Label Text="monTag2" TextColor="Black"/>
+                            </Frame>
+                            <Frame BackgroundColor="Transparent" Margin="10,0,0,10" CornerRadius="15" HeightRequest="20" FlexLayout.AlignSelf="Start" Padding="6,4,4,6" BorderColor="Black">
+                                <Label Text="monTag2" TextColor="Black"/>
+                            </Frame>
+                        </FlexLayout>
+                    </StackLayout>
+                </ContentView>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

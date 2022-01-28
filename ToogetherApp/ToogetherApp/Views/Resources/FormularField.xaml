@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToogetherApp.Views.Resources.FormularField"
+             xmlns:ressources="clr-namespace:ToogetherApp.Views.Resources">
+    <ContentView.Content>
+        <Grid ColumnSpacing="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Column="0" Grid.Row="0" Orientation="Horizontal" >
+                <Image Source="{Binding Source}" HeightRequest="15"/>
+                <Label  Text="{Binding Text}" VerticalOptions="Center" FontSize="Body" HorizontalOptions="Center" TextColor="{Binding TextColor}"/>
+            </StackLayout>
+            <Frame Grid.Column="1" Grid.Row="0" Padding="0" Grid.RowSpan="1" BorderColor="{Binding BorderColor}" BackgroundColor="Transparent" CornerRadius="10" HasShadow="False" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Entry TextColor="{Binding EditorTextColor}"/>
+            </Frame>
+        </Grid>
+
+    </ContentView.Content>
+</ContentView>

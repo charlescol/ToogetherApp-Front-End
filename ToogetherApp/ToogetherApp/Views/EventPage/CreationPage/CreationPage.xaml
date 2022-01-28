@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToogetherApp.Views.CreationPage"
+             BackgroundImageSource="backgroundImage_color.jpg"
+	         xmlns:ressources="clr-namespace:ToogetherApp.Views.Resources">
+    <ContentPage.Content>
+        <StackLayout Spacing="10" VerticalOptions="FillAndExpand">
+
+            <ressources:HeaderNavigationPage x:Name="title_view" Text="Création d'Evénements"/>
+            <ressources:FormularField Text="Nom de l'évènement" TextColor="White" EditorTextColor="White" BorderColor="White"  Source="eventTitle_icon.png" Margin="40,0,40,0" Grid.Row="0" />
+            <ressources:FormularField Text="Sous-titre" TextColor="White" EditorTextColor="White" BorderColor="White" Source="eventSubtitle_icon.png" Margin="40,0,40,0" Grid.Row="0" />
+
+            <StackLayout Spacing="0" Grid.Row="1" VerticalOptions="CenterAndExpand">
+                <StackLayout.Resources>
+                    <ResourceDictionary>
+                        <Style TargetType="ImageButton">
+                            <Setter Property="CornerRadius" Value="50" />
+                            <Setter Property="WidthRequest" Value="90" />
+                            <Setter Property="HeightRequest" Value="90" />
+                            <Setter Property="BackgroundColor" Value="White" />
+                            <Setter Property="Padding" Value="30" />
+                        </Style>
+                    </ResourceDictionary>
+                </StackLayout.Resources>
+                <Grid HorizontalOptions="Center"  RowSpacing="10"  ColumnSpacing="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <ImageButton Grid.Row="0" Grid.Column="0" Source="addDescription_icon.png" Clicked="OpenEventFeaturesPage" ClassId="Description"/>
+                    <ImageButton Grid.Row="0" Grid.Column="1" Source="addLocation_icon.png" Clicked="OpenEventFeaturesPage" ClassId="Map"/>
+                    <ImageButton Grid.Row="0" Grid.Column="2" Source="addDate_icon.png" Clicked="OpenEventFeaturesPage" ClassId="Date"/>
+                    <ImageButton Grid.Row="1" Grid.Column="0" Source="addTags_icon.png" Clicked="OpenEventFeaturesPage" ClassId="Tags"/>
+                    <ImageButton Grid.Row="1" Grid.Column="1" Source="addActors_icon.png" Clicked="OpenEventFeaturesPage" ClassId="Actors"/>
+                    <ImageButton Grid.Row="1" Grid.Column="2" Source="addPresentation_icon.png" Clicked="OpenEventFeaturesPage" ClassId="Presentation"/>
+                </Grid>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10">
+                    
+                    <ImageButton Source="more_icon.png" Clicked="OpenEventFeaturesPage" ClassId="Diverse"/>
+                </StackLayout>
+            </StackLayout>
+            <Button HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" Text="Publier" Command="{Binding OnPublishCommand}" HeightRequest="60" BackgroundColor="White"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+    

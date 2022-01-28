@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToogetherApp.Views.MapLocation"
+             xmlns:maps="clr-namespace:ToogetherApp.Views" 
+             BackgroundColor="Transparent"
+             >
+    <ContentView.Content>
+        <Frame BackgroundColor="Transparent" CornerRadius="5" Padding="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <maps:Map  x:Name="CurentMap" AbsoluteLayout.LayoutBounds="0,0,1,1"  AbsoluteLayout.LayoutFlags="All" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+        </Frame>
+        
+    </ContentView.Content>
+</ContentView>

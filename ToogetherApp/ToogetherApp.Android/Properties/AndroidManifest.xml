@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.sylex.toogetherapp">
+    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="30" />
+
+    <application android:label="ToogetherApp.Android" android:theme="@style/MainTheme">	
+		<!--Facebook connection-->
+		<meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+		<meta-data android:name="com.facebook.sdk.ApplicationName" android:value="@string/facebook_app_name"/>
+
+		<provider android:name="android.support.v4.content.FileProvider"
+				  android:authorities="com.sylex.toogetherapp.fileprovider"
+				  android:exported="false"
+				  android:grantUriPermissions="true">
+
+			<meta-data android:name="android.support.FILE_PROVIDER_PATHS"
+						   android:resource="@xml/file_paths"></meta-data>
+		</provider>
+
+		<!-- Necessary for apps that target Android 9.0 or higher -->
+		<uses-library android:name="org.apache.http.legacy" android:required="false" />
+	</application>
+
+	<!-- Internet Permission -->
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.INTERNET" />
+
+	<!--Camera Permission-->
+	<uses-permission android:name="android.hardware.camera"/>
+	<uses-permission android:name="android.hardware.camera.autofocus"/>
+
+	<!-- Storage Permission-->
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+	<!-- User Access Location Permission -->
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+</manifest>

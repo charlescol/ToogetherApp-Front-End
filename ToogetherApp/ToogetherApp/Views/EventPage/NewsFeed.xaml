@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToogetherApp.Views.NewsFeed">
+  <ContentView.Content>
+        <CollectionView x:Name="carousel_view" ItemsSource="{Binding Views}" HorizontalOptions="FillAndExpand">
+            <CollectionView.ItemTemplate >
+                <DataTemplate>
+                    <Frame Content="{Binding .}" Padding="0" HorizontalOptions="FillAndExpand" BorderColor="Gray"/>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" />
+            </CollectionView.ItemsLayout>
+        </CollectionView>
+    </ContentView.Content>
+</ContentView>
